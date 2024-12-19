@@ -1,0 +1,65 @@
+body{
+    position: relative;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+form label{
+    font-family: Nimbus Bold;
+    color: var(--darkBlue);
+    font-size: 22px;
+}
+
+.dato{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 25rem;
+}
+
+form b{
+    color: red;
+}
+
+form .infoAlta{
+   display: flex;
+   flex-direction: row;
+   gap: 4rem;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+}
+
+.dato input[type='text'],.dato input[type='password'],.dato input[type='email'],.dato input[type='date'],.dato input[type='tel']{
+    border:none;
+    border-bottom: 2px solid var(--lightGrey);
+    padding: 10px 5px;
+    font-family: Nimbus;
+    font-size: 20px;
+    text-align: center;
+}
+
+.dato.passwd .mostrar{
+    right: 3.6rem !important;
+}
+
+.inner-header{
+    height: 100%;
+}
+
+input[type='submit']{
+    border: none;
+    background-color: var(--lightBlue);
+    color: white;
+    font-size: 22px;
+    border-radius: 10px;
+    font-family: Nimbus Bold;
+    padding: 10px 30px;
+}

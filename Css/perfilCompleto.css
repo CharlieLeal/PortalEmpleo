@@ -1,0 +1,1270 @@
+.perfilWrap {
+  display: grid !important;
+  grid-template-columns: 30% 65%;
+  align-items: flex-start;
+  margin: 4rem 0rem;
+  padding: 0rem 2rem;
+  justify-content: space-between;
+}
+
+.iniciales button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.iniciales.ver button.iniciales {
+  border: 9px solid var(--lightBlue);
+  text-align: center;
+  width: fit-content !important;
+  padding: 40px;
+  font-family: Nimbus Bold;
+  font-size: 50px;
+  border-radius: 50%;
+  color: white;
+  text-transform: uppercase;
+}
+
+.iniciales:has(img):hover p img,
+.iniciales img:hover p img,
+.iniciales:hover p img {
+  display: block;
+}
+
+.iniciales:has(img),
+.iniciales img {
+  width: 15rem;
+  border-radius: 50%;
+  padding: 0rem;
+  border: none;
+  position: relative;
+  background-color: transparent;
+}
+
+.iniciales p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.iniciales p img {
+  display: none;
+  width: 5rem;
+  z-index: 99999999999999;
+  border-radius: 0px;
+  position: initial;
+}
+
+/* .iniciales.ver {
+  border: 9px solid var(--lightBlue);
+  text-align: center;
+  width: fit-content;
+  padding: 40px;
+  font-family: Nimbus Bold;
+  font-size: 50px;
+  border-radius: 50%;
+  color: var(--darkBlue);
+} */
+
+.iniciales.ver {
+  text-align: center;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Estilo del botón personalizado */
+.custom-file-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--lightBlue);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px !important;
+  color: white !important;
+  margin: 0 auto;
+}
+
+.custom-file-label:hover {
+  -webkit-box-shadow: 0px 0px 15px 0px #ffffff;
+  box-shadow: 0px 0px 15px 0px #ffffff;
+  cursor: pointer;
+}
+
+/* Estilo para el texto cuando se selecciona un archivo */
+#file-name {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  width: 25rem;
+  text-align: center;
+  color: white;
+}
+
+/* Ocultamos el botón submit inicialmente */
+#submit-btn {
+  display: none;
+  background-color: var(--lightGreen);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+  font-family: Nimbus Bold;
+  font-size: 19px;
+}
+
+#submit-btn:hover {
+  -webkit-box-shadow: 0px 1px 12px 1px #000000;
+  box-shadow: 0px 1px 12px 1px #000000;
+}
+
+#error-message {
+  color: red;
+  width: 20rem;
+  text-align: center;
+}
+
+.informacionPerfil b {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: Nimbus Bold;
+}
+
+.informacionPerfil .dato {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.icon {
+  color: black;
+  font-size: 25px;
+  width: 30px;
+}
+
+.foto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  height: 100%;
+  background-color: var(--darkBlue);
+  border-radius: 21px 0px 0px 21px;
+  padding-bottom: 2rem;
+}
+
+.foto form .dato {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.dato.oficial {
+  align-items: start;
+}
+
+.dato.oficial > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.datosPersonales form input[type="email"],
+.datosPersonales form input[type="text"],
+.datosPersonales form input[type="date"] {
+  border: none;
+  border-bottom: 2px solid var(--darkBlue);
+  text-align: center;
+  font-family: Nimbus Light;
+  font-size: 18px;
+}
+
+.datosPersonales > img {
+  display: none;
+  width: 2rem;
+}
+
+.datosPersonales > img:hover {
+  cursor: pointer;
+  border-bottom: 2px solid var(--lightBlue);
+}
+
+.datosPersonales {
+  position: relative;
+}
+
+.datosPersonales:hover img {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+}
+
+.datosPersonales form input:disabled {
+  background-color: #bebebe8a;
+}
+
+.datosPersonales form input:disabled:hover {
+  cursor: no-drop;
+}
+
+.datosPersonales form .together,
+.datosPersonales form .separated.open {
+  display: block;
+}
+
+.datosPersonales form .separated,
+.datosPersonales form .together.close {
+  display: none;
+}
+
+.informacionPerfil {
+  display: flex;
+  flex-direction: column;
+}
+
+.datosPersonales {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: flex-start;
+  border-bottom: 3px solid var(--darkBlue);
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.informacionPerfil h2 {
+  margin: 0;
+  font-family: Nimbus Bold;
+  font-size: 30px;
+  color: var(--lightBlue);
+}
+
+.misDatos b,
+.aniadir label {
+  font-family: Nimbus Bold;
+  font-size: 20px;
+}
+
+.misDatos {
+  font-family: Nimbus Light;
+  font-size: 18px;
+  border-bottom: 3px dashed var(--darkBlue);
+  padding: 2rem 0rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.misDatos:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0rem;
+}
+
+.misDatos .headline img {
+  display: none;
+  width: 2rem;
+}
+
+.misDatos .headline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.misDatos:hover .headline img {
+  display: block;
+}
+
+.misDatos:hover .headline img:hover {
+  cursor: pointer;
+  border-bottom: 1px solid var(--lightBlue);
+}
+
+.aniadir input[type="text"] {
+  border: none;
+  border-bottom: 2px solid white;
+  font-size: 18px;
+  font-family: Nimbus Light;
+  text-align: center;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+}
+
+.aniadir.blue input[type="text"] {
+  border: none;
+  border-bottom: 2px solid var(--darkBlue);
+  font-size: 18px;
+  font-family: Nimbus Light;
+  text-align: center;
+  width: 100%;
+  background-color: transparent;
+  color: var(--darkBlue);
+}
+
+.aniadir.blue input[type="text"]::placeholder {
+  color: var(--darkBlue);
+}
+
+.aniadir input[type="text"]::placeholder {
+  color: white;
+}
+
+.aniadirExperiencia input[type="text"] {
+  width: fit-content;
+}
+
+.aniadir ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  max-height: 10rem;
+  overflow-y: scroll;
+  border: 2px solid var(--lightBlue);
+}
+
+.aniadir ul li:hover {
+  cursor: pointer;
+  background-color: var(--darkBlue);
+  color: white;
+}
+
+.aniadir input[type="submit"] {
+  border: none;
+  background-color: var(--lightGreen);
+  color: white;
+  font-family: Nimbus Bold;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.dato select {
+  padding: 2px 5px 0px 5px;
+  border-radius: 1px;
+  font-family: Nimbus Light;
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid var(--darkBlue);
+  text-align: center;
+}
+.datosPersonales form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.datosPersonales:has(.separated.open) form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+form .actualizarPerfil {
+  display: none;
+}
+
+.foto .iniciales .buttonEditarFoto {
+  display: none;
+}
+
+.foto .iniciales:hover .buttonEditarFoto {
+  display: block;
+}
+
+.foto .misDatos {
+  border-bottom: 2px solid white;
+}
+
+.foto .misDatos:last-of-type {
+  border-bottom: none;
+}
+
+/* AQUI */
+/* .iniciales {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+} */
+
+.custom-file-label {
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: fit-content;
+}
+
+#fileInputFoto {
+  display: none; /* Esconder input de archivo */
+}
+
+#file-name-display {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #ff0000;
+  text-align: center;
+}
+
+.custom-submit {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: none; /* Esconder inicialmente */
+}
+
+.custom-submit:hover {
+  background-color: #0056b3;
+}
+/* FIN */
+
+form .actualizarPerfil.open {
+  display: block;
+  background-color: var(--lightGreen);
+  color: white;
+  padding: 10px 20px;
+  font-family: Nimbus Bold;
+  font-size: 20px;
+  margin: 0 auto;
+  width: fit-content;
+  border-radius: 10px;
+  border: none;
+}
+
+form .actualizarPerfil.open:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 15px 0px #000000;
+  box-shadow: 0px 0px 15px 0px #000000;
+}
+
+.fechaContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.fechaContainer .fecha {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fechaContainer input[type="date"] {
+  border: none;
+  border-bottom: 2px solid var(--darkBlue);
+  font-family: Nimbus Light;
+  font-size: 17px;
+  text-align: center;
+}
+
+.aniadir input[type="submit"]:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 15px 0px #000000;
+  box-shadow: 0px 0px 15px 0px #000000;
+}
+
+.aniadir .informacion {
+  display: none;
+}
+
+/* .aniadir .informacion.open ul{
+  display: flex !important;
+} */
+
+.aniadir .informacion form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.datoModificar {
+  display: none;
+}
+
+.datoModificar .borrar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.datoModificar .borrar .data {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+  align-items: center;
+  border-bottom: 2px solid var(--lightGrey);
+}
+
+.datoModificar .borrar .data .name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.datoModificar .borrar .data:last-of-type {
+  border-bottom: none;
+}
+
+.datoModificar .borrar .data:hover {
+  background-color: var(--lightBlue);
+}
+
+.datoModificar .borrar .data button {
+  width: fit-content;
+  background-color: transparent;
+  border: none;
+}
+
+.datoModificar .borrar .data button:hover {
+  cursor: pointer;
+}
+
+.datoModificar .borrar .data button img {
+  width: 2rem;
+  height: auto;
+}
+
+.aniadir > img {
+  width: 3rem;
+}
+
+.aniadir > img:hover {
+  cursor: pointer;
+}
+
+.nivel {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.misHerramientas .tecno,
+.misEstudios .study,
+.misIdiomas .idioma {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.misEstudios .study,
+.misIdiomas .idioma {
+  flex-direction: column;
+}
+
+.misHerramientas .tecno > div::before {
+  content: "\1f5b0"; /* Código Unicode del ícono */
+  font-size: 24px;
+  color: white;
+  margin-right: 10px; /* Espacio entre el ícono y el contenido */
+}
+
+.misEstudios .study > div::before,
+.misEstudios .data::before {
+  content: "\1f4da"; /* Código Unicode del ícono */
+  font-size: 24px;
+  color: var(--darkBlue);
+  margin-right: 10px; /* Espacio entre el ícono y el contenido */
+}
+
+.misIdiomas .idioma > div::before {
+  content: "\2691"; /* Código Unicode del ícono */
+  font-size: 24px;
+  color: white;
+  margin-right: 10px; /* Espacio entre el ícono y el contenido */
+}
+
+.misDatos select {
+  padding: 10px;
+  border-radius: 10px;
+  font-family: Nimbus Light;
+  font-size: 17px;
+}
+
+.especialidad-container {
+  margin-top: 1rem;
+}
+
+.misExperiencias .experiencia {
+  display: grid;
+  grid-template-columns: 3rem auto auto auto;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.refs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.refs .ref {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 0.7rem;
+}
+
+.refs .ref button img {
+  max-width: 1.5rem !important;
+}
+
+.refs .ref button {
+  display: none;
+}
+
+.refs .ref button.open {
+  display: block !important;
+}
+
+.referencias:has(.boton-borrar.open) img {
+  display: block !important;
+}
+
+.refs .ref:hover button {
+  display: block;
+}
+
+.refs .ref button:hover {
+  cursor: pointer;
+}
+
+.datosExperiencia {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.experiencia.oficial.close {
+  display: none;
+}
+
+.misExperiencias .experiencia .nombreEmpresa {
+  font-family: Nimbus Bold;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.misExperiencias .experiencia .fechas {
+  font-style: italic;
+  font-family: Nimbus Light;
+  color: var(--darkGrey);
+  font-size: 18px;
+}
+
+.experienciaFormulario.editarExperiencia {
+  display: none;
+}
+
+.experienciaFormulario.editarExperiencia.open {
+  display: flex !important;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.dato.oficial.expe form .experienciaFormulario.editarExperiencia.open {
+  border-bottom: 2px solid var(--darkBlue);
+  padding: 1rem;
+}
+
+.dato.oficial.expe
+  form:last-child
+  .experienciaFormulario.editarExperiencia.open {
+  border-bottom: none;
+}
+
+.misUrls .boton-borrar.open {
+  display: block !important;
+}
+
+.buttonsExperiencias {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0rem;
+}
+
+.misExperiencias .button-abrir.blue {
+  display: none;
+}
+
+.misExperiencias .button-abrir.blue.open {
+  display: block;
+}
+
+.aniadirExperiencia input {
+  color: #000000 !important;
+}
+
+.referencias > img.open {
+  display: block !important;
+}
+
+.eliminarButton {
+  background-color: red !important;
+}
+
+.buttonsExperiencias input:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.experienciaFormulario.editarExperiencia.open:last-of-type {
+  border-bottom: none;
+}
+
+.misExperiencias .experiencia .puesto,
+.misExperiencias .experiencia .descripcionPuesto,
+.misExperiencias .experiencia .salario {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.misExperiencias .experiencia .puesto b,
+.misExperiencias .experiencia .descripcionPuesto b,
+.misExperiencias .experiencia .salario b {
+  font-family: Nimbus;
+  color: var(--darkGrey);
+}
+
+.referencias {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.referencias img {
+  display: none;
+  max-width: 1.5rem;
+}
+
+.referencias img:hover {
+  cursor: pointer;
+}
+
+.referencias:hover img {
+  display: block;
+}
+
+.aniadirReferencias {
+  display: none;
+}
+
+.aniadirReferencias.open {
+  display: flex !important;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.aniadirReferencias.open label {
+  font-family: Nimbus Bold;
+  font-size: 19px;
+}
+
+.aniadirReferencias.open input[type="text"],
+.aniadirReferencias.open input[type="email"] {
+  border: none;
+  border-bottom: 2px solid var(--darkBlue);
+  font-size: 19px;
+  font-family: Nimbus Light;
+  text-align: center;
+}
+
+.aniadirReferencias.open input[type="submit"] {
+  border: none;
+  background-color: green;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.form.borrarExperiencia {
+  width: 100%;
+}
+
+.aniadirReferencias.open .dato.oficial.expe form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.dato.oficial.expe form button {
+  background: none;
+  border: none;
+  padding: 0rem;
+}
+
+.dato.oficial.expe form button img {
+  max-width: 3rem;
+}
+
+.dato.oficial.expe .experiencia button {
+  display: none;
+}
+
+.dato.oficial.expe .experiencia:hover button {
+  display: block;
+}
+
+.dato.oficial.expe .experiencia button:hover {
+  cursor: pointer;
+}
+
+.aniadirExperiencia {
+  display: none;
+}
+
+.aniadirExperiencia.open {
+  display: block;
+  display: block;
+  -webkit-box-shadow: 0px 0px 7px 0px #000000;
+  box-shadow: 0px 0px 7px 0px #000000;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.aniadirExperiencia.open form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.aniadirExperiencia label,
+.aniadirExperiencia b,
+.experienciaFormulario.editarExperiencia label,
+.experienciaFormulario.editarExperiencia b {
+  font-family: Nimbus Bold;
+  font-size: 19px;
+}
+
+.aniadirExperiencia input[type="text"],
+.aniadirExperiencia input[type="date"],
+.aniadirExperiencia .dato.especial label,
+.aniadirExperiencia textarea,
+.experienciaFormulario.editarExperiencia input[type="text"],
+.experienciaFormulario.editarExperiencia input[type="date"],
+.experienciaFormulario.editarExperiencia .dato.especial label,
+.experienciaFormulario.editarExperiencia textarea {
+  font-family: Nimbus Light;
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid var(--darkBlue);
+  text-align: center;
+}
+
+.aniadirExperiencia .dato.especial label,
+.experienciaFormulario.editarExperiencia .dato.especial label {
+  border: none;
+}
+
+.aniadirExperiencia textarea,
+.experienciaFormulario.editarExperiencia textarea {
+  border: 1px solid var(--darkBlue);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.aniadirExperiencia .fechaFin,
+.experienciaFormulario.editarExperiencia .fechaFin {
+  display: none;
+}
+
+.aniadirExperiencia .fechaFin.open,
+.experienciaFormulario.editarExperiencia .fechaFin.open {
+  display: block;
+}
+
+.aniadirExperiencia input[type="submit"],
+.experienciaFormulario.editarExperiencia input[type="submit"] {
+  border: none;
+  background-color: var(--lightGreen);
+  color: white;
+  font-family: Nimbus Bold;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.aniadirExperiencia input[type="submit"]:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 12px 0px #000000;
+  box-shadow: 0px 0px 12px 0px #000000;
+  scale: 1.1;
+}
+
+#loading-screen {
+  display: none; /* Oculta la pantalla al inicio */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+  z-index: 9999;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.aniadirUrl form .dato {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.aniadirUrl .dato input[type="url"] {
+  border: none;
+  border-radius: 1px;
+  border-bottom: 2px solid var(--darkBlue);
+  text-align: center;
+  font-family: Nimbus;
+  font-size: 19px;
+}
+
+.dato.url a {
+  color: black;
+}
+
+.aniadirUrl {
+  display: none;
+}
+
+.aniadirUrl.open {
+  display: block;
+}
+
+/* Animación de la carga */
+.spinner {
+  margin-top: 20%;
+  width: 60px;
+  height: 60px;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilo del mensaje */
+.loading-text {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.datoContratacion {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.aniadir {
+  margin-top: 1.5rem;
+}
+
+.foto .misDatos ul {
+  border: 2px solid white;
+}
+
+.foto .misDatos ul li:hover {
+  background-color: var(--lightBlue);
+}
+
+.foto .nivelIdioma {
+  display: flex;
+  flex-direction: column;
+}
+
+.foto .aniadir .dato {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.datosProfesionales {
+  width: 90%;
+}
+
+#btnGenerarPDF {
+  position: fixed;
+  bottom: 10rem;
+  right: 1rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  border: none;
+}
+#btnGenerarPDF:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+/* Print */
+
+@media print {
+  .misExperiencias.misDatos {
+    page-break-before: always;
+  }
+  footer {
+    display: none;
+  }
+}
+
+.dato.oficial.url button {
+  background-color: transparent;
+  border: none;
+  display: none;
+}
+
+.dato.oficial.url button:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.dato.oficial.url button img {
+  max-width: 2rem;
+}
+
+.dato.oficial.url .url:hover button {
+  display: block;
+}
+
+.dato.oficial.url .url {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button-abrir.blue {
+  color: var(--darkBlue);
+}
+
+.editarButton,
+.button-abrir {
+  border: 2px solid;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.editarButton.blue {
+  color: var(--darkBlue);
+}
+
+.editarButton.blue.personal {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.editarButton:hover,
+.button-abrir:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.button-abrir {
+  width: fit-content;
+}
+
+.boton-borrar {
+  display: none;
+}
+
+.boton-borrar.open {
+  width: 30px;
+  display: block;
+  background-color: transparent;
+  border: none;
+}
+
+.boton-borrar.open img {
+  width: 30px;
+}
+
+.boton-borrar.open:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.dato.oficial form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.dato.oficial form .data {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.dato.oficial form .data::before {
+  content: "\2023";
+  font-size: 40px;
+  display: flex;
+  align-items: start;
+}
+
+.dato.oficial form:has(.boton-borrar.open) {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.datoModificar.open {
+  display: block;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .perfilWrap {
+    grid-template-columns: 100%;
+    row-gap: 3rem;
+  }
+  .foto {
+    padding-bottom: 0rem;
+    border-radius: 21px;
+  }
+  .misDatos select{
+    width: 100%;
+  }
+  .experienciaFormulario.editarExperiencia.open{
+    width: initial;
+  }
+  
+  .referencias{
+    justify-content: center;
+  }
+  .aniadirUrl form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #file-name{
+    width: 100%;
+  }
+
+  .datosPersonales:has(.separated.open) form{
+    row-gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .perfilWrap {
+    padding: 0rem 0.7rem;
+  }
+  .misDatos ul{
+    width: initial !important;
+  }
+  
+  
+}
+
+@media(max-width:610px){
+  .informacionPerfil .dato:has(.separated.open){
+    flex-direction: column;
+    text-align: center;
+  }
+  /* .informacionPerfil .dato{
+    flex-direction: column;
+  } */
+  textarea{
+    max-width: 12rem;
+  }
+}
+
+@media (max-width: 510px) {
+  .misDatos .headline {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .aniadir {
+    margin-top: 0.3rem;
+    width: initial;
+  }
+  .button-abrir {
+    margin: 0 auto;
+  }
+  .aniadir .informacion {
+    margin-top: 1rem;
+  }
+}

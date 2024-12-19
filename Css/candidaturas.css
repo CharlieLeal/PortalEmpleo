@@ -1,0 +1,157 @@
+.ofertasCandidato {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  margin: 4rem auto 0rem auto;
+  gap: 1rem;
+}
+
+.ofertasCandidato .ofertaResumenEstado {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.ofertasCandidato .ofertaResumenEstado .titulo {
+  color: var(--darkBlue);
+  font-size: 22px;
+  font-family: Nimbus Bold;
+}
+
+.ofertasCandidato .ofertaResumenEstado .fecha {
+  color: var(--lightGreen);
+}
+
+.ofertaResumen .imagen img {
+  width: 10rem;
+}
+
+.ofertasCandidato b{
+  font-family: Nimbus Bold;
+  font-size: 20px;
+}
+
+.ofertaResumen {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 1rem;
+  border: 1px solid #ddd;  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.ofertasCandidato a {
+  text-decoration: none;
+  color: black;
+}
+
+.ofertasCandidato a:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.filtros {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.filtros img {
+  max-width: 2rem;
+  border: 3px solid var(--darkBlue);
+  padding: 5px;
+  border-radius: 50%;
+  max-height: 2rem;
+  cursor: pointer;
+}
+
+.filtros .estadosFiltro {
+  display: none; /* Aseguramos que sea un contenedor flexible */
+  flex-direction: row;
+  gap: 1rem;
+  font-family: Nimbus;
+  font-size: 19px;
+  background-color: transparent;
+  padding: 0;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  
+  /* Estado oculto inicialmente */
+}
+
+.filtros .estadosFiltro.open {
+display: flex !important;
+max-height: 1rem !important
+}
+
+.filtros .estadosFiltro label:first-child {
+  font-family: Nimbus Bold;
+}
+
+/* Estilos para el paginador */
+#paginador {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#paginador button {
+  margin: 5px;
+  padding: 8px 12px;
+  background-color: #f1f1f1;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+  border:none
+}
+
+#paginador button:hover {
+  background-color: var(--lightBlue);
+  color: #fff !important;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1120px) {
+  .filtros{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .ofertasCandidato .ofertaResumenEstado {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .ofertasCandidato {
+    max-width: 90%;
+  }
+  .filtros .estadosFiltro.open{
+    flex-wrap: wrap;
+    max-height: 100% !important;
+  }
+}
+
+@media (max-width: 545px) {
+  .ofertaResumen {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .ofertasCandidato {
+    margin-top: 2rem;
+  }
+}

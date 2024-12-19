@@ -1,0 +1,172 @@
+@font-face {
+  font-family: Nimbus Bold;
+  src: url("../Font/NimbusSanNov-Bol.otf");
+}
+
+@font-face {
+  font-family: Nimbus;
+  src: url("../Font/NimbusSanNov-Reg.otf");
+}
+
+@font-face {
+  font-family: Nimbus Light;
+  src: url("../Font/NimbusSanNov-Lig.otf");
+}
+
+.header .logo {
+  min-width: 30rem;
+  max-width: 30rem;
+  margin: 0 auto 1rem auto;
+}
+
+.inicio {
+  padding-top: 3rem;
+}
+
+.welcome {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--darkBlue);
+  font-family: Nimbus Bold;
+}
+
+.welcome h2 {
+  color: var(--darkBlue);
+  font-size: 20px;
+}
+
+.user,
+.passwd,
+.loginButton {
+  display: grid;
+  text-align: center;
+  margin-bottom: 10px;
+  gap: 2rem;
+  font-family: Nimbus Bold;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--lightBlue);
+}
+
+.user input,
+.passwd input {
+  padding: 10px;
+  font-family: Nimbus;
+  font-size: 17px;
+  border: none;
+  border-bottom: 3px solid var(--lightGrey);
+}
+
+.passwd {
+  position: relative;
+}
+
+.passwd .mostrar {
+  width: fit-content;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+}
+
+.passwd .mostrar img {
+  width: 2rem;
+  display: block;
+}
+
+.inicio .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.inicio .registro {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2.5rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.loginButton {
+  border-color: transparent !important;
+  padding: 10px 30px !important;
+  background-color: var(--lightBlue) !important;
+  color: white !important;
+  font-size: 22px !important;
+  border-radius: 10px !important;
+  width: fit-content !important;
+  font-family: Nimbus Bold;
+}
+
+.loginButton:hover {
+  cursor: pointer;
+  transform: translate(0,-6px);
+}
+
+.crearCuenta, .crearCuenta a{
+  width: fit-content;
+  margin: 0 auto;
+  color: var(--darkBlue);
+  font-family: Nimbus Bold;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.crearCuenta a:hover{
+  text-decoration: underline;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+.buttons a {
+  color: var(--lightBlue);
+  font-size: 22px;
+  text-decoration: none;
+  font-family: Nimbus Bold;
+}
+
+.buttons a:hover {
+  text-decoration: underline;
+  text-shadow: 0px 0px 7px #ffffff;
+}
+
+/* Responsive */
+
+@media (max-width: 1180px) {
+  .login .logo {
+    display: block;
+    width: 20rem;
+    min-width: initial;
+    max-width: initial;
+  }
+}
+
+@media (max-width: 500px) {
+  .buttons {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .login .logo {
+    width: 15rem;
+  }
+  .inicio {
+    padding-top: 50px;
+  }
+  .inicio .form {
+    margin-top: 1rem;
+  }
+}

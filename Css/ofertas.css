@@ -1,0 +1,212 @@
+h2 {
+  margin: 0;
+  font-family: Nimbus Bold;
+}
+.ofertasWrap {
+  padding: 2rem 1rem;
+}
+
+.headline {
+  font-size: 40px;
+  color: var(--darkGrey);
+}
+
+.listadoOfertas {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  margin: 4rem auto 0rem auto;
+}
+
+.listadoOfertas .oferta {
+  padding: 2rem 1rem;
+  border: 1px solid #dddd;  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  align-items: flex-start;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.listadoOfertas .oferta:hover {
+  scale: 1.03;
+}
+
+.listadoOfertas .oferta:last-of-type {
+  border-bottom: none;
+}
+
+.listadoOfertas .oferta img {
+  max-width: 10rem;
+}
+
+.listadoOfertas .oferta .infoOferta {
+  display: flex;
+  flex-direction: column;
+}
+
+.listadoOfertas .oferta .infoOferta .tit {
+  font-family: Nimbus Bold;
+  font-size: 25px;
+  color: var(--darkGrey);
+}
+
+.listadoOfertas .oferta .infoOferta .puesto {
+  font-family: Nimbus Light;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--darkGrey);
+}
+
+.listadoOfertas .oferta .infoOferta .fecha {
+  font-family: Nimbus;
+  color: var(--lightGreen);
+  font-size: 18px;
+}
+
+.listadoOfertas .oferta .infoOferta .ubicacion {
+  font-family: Nimbus;
+  color: var(--darkGrey);
+  font-size: 18px;
+}
+
+.listadoOfertas .oferta .infoOferta .descripcionPuesto {
+  font-family: Nimbus;
+  font-size: 18px;
+  margin-top: 0.5rem;
+}
+
+.listadoOfertas .oferta .infoOferta .descripcionPuesto b {
+  font-family: Nimbus Bold;
+}
+
+.listadoOfertas .oferta .buttonInscripcion {
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: var(--darkBlue);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-top: 2rem;
+  align-self: flex-start;
+  font-size: 18px;
+}
+
+.listadoOfertas .oferta .buttonInscripcion:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 10px 0px #000000;
+  box-shadow: 0px 0px 10px 0px #000000;
+}
+
+.oferta .verMas {
+  color: var(--darkGrey);
+  font-family: Nimbus Bold;
+  margin-top: 0.6rem;
+}
+
+.oferta .verMas:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.descripcionPuesto.masInformacion {
+  display: none;
+}
+
+.infoFiltro {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: 'Nimbus Bold';
+  justify-content: center;
+  color: white;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.infoFiltro label{
+  font-family: Nimbus Bold;
+}
+
+.infoFiltro input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--darkBlue); /* Cambia el color del checkbox en navegadores modernos */
+  cursor: pointer;
+}
+
+/* PAGINADOR */
+
+#paginador {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#paginador button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #f1f1f1;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#paginador button:hover {
+  background-color: var(--lightBlue);
+  color: #fff;
+}
+
+.listadoOfertas .oferta {
+  display: none; /* Ocultar todas las ofertas por defecto */
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+@keyframes parpadeo {
+  0%, 100% {
+    opacity: 1; /* Totalmente visible */
+  }
+  50% {
+    opacity: 0; /* Invisible en la mitad del ciclo */
+  }
+}
+
+p.hoy {
+  animation: parpadeo 2s infinite; /* Duración de 1.5s, repitiéndose infinitamente */
+  margin: 0;
+}
+
+p.hoy::first-letter{
+  text-transform: uppercase;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 920px) {
+  .listadoOfertas {
+    max-width: 95%;
+  }
+  .headline {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .listadoOfertas .oferta .buttonInscripcion {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 620px) {
+  .listadoOfertas {
+    margin: 2rem auto 0rem auto;
+  }
+  .listadoOfertas .oferta {
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 2rem .7rem;
+  }
+}

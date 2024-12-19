@@ -1,0 +1,128 @@
+.datosWrap {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-around;
+}
+
+.datosWrap .iniciales {
+  border: 9px solid var(--lightBlue);
+  text-align: center;
+  width: fit-content;
+  padding: 40px;
+  font-family: Nimbus Bold;
+  font-size: 50px;
+  border-radius: 50%;
+  color: var(--darkBlue);
+}
+
+.datosWrap .iniciales:has(img),
+.datosWrap .iniciales img {
+  width: 15rem;
+  border-radius: 50%;
+  padding: 0rem;
+  border: none;
+}
+
+.datosWrap .formulario {
+  position: relative;
+  padding-top: 4rem;
+}
+
+.datosWrap .formulario .editarButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: var(--darkBlue);
+  border: 2px solid;
+  padding: 5px 10px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.datosWrap .formulario .editarButton:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.datosWrap .formulario .separated {
+  display: none;
+}
+
+.datosWrap .formulario .together {
+  display: block;
+}
+
+.datosWrap .formulario .together.close {
+  display: none;
+}
+
+.datosWrap .formulario .separated.open {
+  display: block;
+}
+
+.datosWrap .formulario .dato {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.datosWrap .formulario .dato b {
+  font-family: Nimbus Bold;
+  font-size: 19px;
+}
+
+.datosWrap .formulario .dato {
+  font-family: Nimbus;
+  font-size: 18px;
+}
+
+.datosWrap .datoContratacion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.datosWrap .formulario .actualizarDatos {
+  display: none;
+}
+
+.datosWrap .formulario .actualizarDatos.open {
+  border: none;
+  background-color: var(--lightGreen);
+  color: white;
+  font-family: Nimbus Bold;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 2rem auto 0rem auto;
+  display: block;
+}
+
+.datosWrap .formulario .actualizarDatos.open:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.datosWrap .formulario input[type="text"],
+.datosWrap .formulario input[type="date"] {
+  border: none;
+  border-bottom: 2px solid var(--darkBlue);
+  text-align: center;
+  font-family: Nimbus Light;
+  font-size: 18px;
+}
+
+.datosWrap .formulario select {
+  padding: 2px 5px 0px 5px;
+  border-radius: 1px;
+  font-family: Nimbus Light;
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid var(--darkBlue);
+  text-align: center;
+}

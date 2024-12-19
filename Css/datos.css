@@ -1,0 +1,272 @@
+.perfilWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0rem 4rem 3rem 4rem;
+  margin-top: 4rem;
+  gap: 6rem;
+}
+
+.iniciales {
+  border: 9px solid var(--lightBlue);
+  text-align: center;
+  width: fit-content;
+  padding: 40px;
+  font-family: Nimbus Bold;
+  font-size: 50px;
+  border-radius: 50%;
+  color: var(--darkBlue);
+}
+
+.infoWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+  border-bottom: 2px solid var(--darkBlue);
+  padding: 3rem 0rem;
+}
+
+.infoWrap:firs-child{
+  padding-top: 0rem;
+}
+
+.infoWrap:last-child{
+  border-bottom: none;
+  padding-bottom: 0rem;
+}
+
+.infoWrap h2 {
+  margin: 0;
+  font-family: Nimbus Bold;
+  font-size: 40px;
+  color: var(--lightBlue);
+  padding-bottom: 0.6rem;
+}
+
+.infoWrap .headline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.infoWrap .headline img {
+  height: fit-content;
+}
+
+.infoWrap .info.box {
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 21px;
+  padding: 2rem;
+  -webkit-box-shadow: 0px 0px 19px -5px #000000;
+    box-shadow: 0px 0px 19px -5px #000000;
+}
+
+.infoWrap .info form {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  align-items: center;
+  justify-content: center;
+  column-gap: 3%;
+  row-gap: 5rem;
+  margin-bottom: 4rem;
+}
+
+.infoWrap form .dato {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.infoWrap form .dato label {
+  font-family: Nimbus Bold;
+  font-size: 27px;
+  color: var(--darkBlue);
+  text-align: center;
+}
+
+.infoWrap form .dato input[type="text"],
+.infoWrap form .dato input[type="email"],
+.infoWrap form .dato input[type="date"] {
+  font-family: Nimbus;
+  color: var(--darkGrey);
+  font-size: 20px;
+  width: fit-content;
+  text-align: center;
+  border: none;
+  padding: 5px;
+  border-bottom: 3px solid var(--lightBlue);
+}
+
+.infoWrap form .dato input:disabled{
+  cursor: no-drop;
+  background-color: rgba(118, 118, 118, 0.3);
+  opacity: 70%;
+}
+
+.infoWrap form .dato input[type="email"] {
+  width: 80%;
+}
+
+.foto form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.foto form img {
+  max-width: 3rem;
+}
+
+.foto form .dato {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: start;
+}
+
+.foto form .dato label {
+  font-family: Nimbus Bold;
+  font-size: 23px;
+  color: var(--darkBlue);
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Estilo del botón personalizado */
+.custom-file-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--darkBlue);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px !important;
+  color: white !important;
+  margin: 0 auto;
+}
+
+.custom-file-label:hover {
+  background-color: var(--lightBlue);
+}
+
+/* Estilo para el texto cuando se selecciona un archivo */
+#file-name {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Ocultamos el botón submit inicialmente */
+#submit-btn {
+  display: none;
+  background-color: var(--lightGreen);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+  font-family: Nimbus Bold;
+  font-size: 19px;
+}
+
+#submit-btn:hover {
+  -webkit-box-shadow: 0px 1px 12px 1px #000000;
+  box-shadow: 0px 1px 12px 1px #000000;
+}
+
+#error-message {
+  color: red;
+}
+
+.foto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 1615px) {
+  .perfilWrap {
+    gap: 0rem;
+  }
+  .infoWrap .info.box{
+    width: 90%;
+  }
+}
+
+@media (max-width: 1235px) {
+  .perfilWrap {
+    gap: 0rem;
+  }
+  .infoWrap .info form {
+    grid-template-columns: repeat(2, 48%);
+    column-gap: 2%;
+  }
+}
+
+@media (max-width: 920px) {
+  .perfilWrap {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0rem 2rem 3rem 2rem;
+  }
+  .foto {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .infoWrap form .dato input[type="text"],
+  .infoWrap form .dato input[type="email"],
+  .infoWrap form .dato input[type="date"] {
+    width: 95%;
+  }
+}
+
+@media (max-width: 660px) {
+  .foto {
+    justify-content: center;
+  }
+  .infoWrap .info.box{
+    padding: 2rem .7rem;
+  }
+  .perfilWrap{
+    padding: .5rem;
+    padding-bottom: 3rem;
+  }
+  .wrap{
+    padding: 0rem;
+  }
+  .infoWrap h2{
+    text-align: center;
+    font-size: 30px;
+  }
+  .infoWrap .headline{
+    justify-content: center;
+    row-gap: 1rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .infoWrap .info form {
+    grid-template-columns: 100%;
+  }
+  .wrap .dato textarea{
+    width: 12rem;
+  }
+  .foto{
+    flex-direction: column;
+  }
+}
