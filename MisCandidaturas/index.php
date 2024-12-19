@@ -60,7 +60,11 @@ if (isset($_COOKIE['mailUsuario'])) { ?>
                 <a href="../Ofertas/index.php?<?php echo 'nameOf=' . $ofertas['idOferta']; ?>">
                     <div class="ofertaResumen" data-estado="<?php echo $ofertas['estado']; ?>">
                         <div class="imagen">
-                            <img src="<?php echo $ofertas['logoAG']; ?>" alt="Logo empresa">
+                        <?php if (is_null($ofertas['logoAG'])) { ?>
+                                <img src="../Img/Logos/LogoColor.png" alt="Logo Oferta">
+                            <?php } else { ?>
+                                <img src="<?php echo $oferta['logoAG']; ?>" alt="Logo Oferta">
+                            <?php } ?>
                         </div>
                         <div class="ofertaResumenEstado">
                             <div class="columnas">

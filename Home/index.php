@@ -53,11 +53,18 @@ require_once("../Funciones/funciones.php");
 
                     foreach ($listadoOfertas as $oferta) { ?>
                         <div class="oferta" data-titulo="<?php echo $oferta['titulo']; ?>" data-descripcion="<?php echo $oferta['descripcion']; ?>" data-poblacion="<?php echo $oferta['poblacion']; ?>" data-ubicacion="<?php echo $oferta['provincia']; ?>" data-technology="<?php echo $oferta['esTechnology'] ? 'true' : 'false'; ?>">
-                            <img src="<?php echo $oferta['logoAG']; ?>" alt="Logo Oferta">
+                            <?php if (is_null($oferta['logoAG'])) { ?>
+                                <img src="../Img/Logos/LogoColor.png" alt="Logo Oferta">
+                            <?php } else { ?>
+                                <img src="<?php echo $oferta['logoAG']; ?>" alt="Logo Oferta">
+                            <?php } ?>
                             <div class="infoOferta">
                                 <div class="tit"><?php echo $oferta['titulo']; ?></div>
-                                <div class="puesto"><?php echo $oferta['puesto'] . ' (' . $oferta['jornada'] . ')'; ?></div>
-
+                                <?php if ($oferta['vacantes'] > 0) { ?>
+                                    <div class="puesto"><?php echo $oferta['puesto'] . ' (' . $oferta['jornada'] . ') -- ' . $oferta['vacantes'] . ' vacantes'; ?></div>
+                                <?php } else { ?>
+                                    <div class="puesto"><?php echo $oferta['puesto'] . ' (' . $oferta['jornada'] . ')'; ?></div>
+                                <?php } ?>
                                 <?php if ($oferta['teletrabajo'] == true) { ?>
                                     <div class="ubicacion"><?php echo $oferta['poblacion'] . ' | ' . mb_convert_case(mb_strtolower($oferta['provincia'], 'UTF-8'), MB_CASE_TITLE, "UTF-8") . ' | ' . mb_convert_case(mb_strtolower($oferta['pais'], 'UTF-8'), MB_CASE_TITLE, "UTF-8") . ' | Teletrabajo'; ?></div>
                                 <?php } else { ?>

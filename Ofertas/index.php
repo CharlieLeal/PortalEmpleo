@@ -36,7 +36,11 @@ if (isset($_COOKIE['mailUsuario']) && isset($_GET['nameOf'])) { ?>
                     <input type="submit" value="Inscribirme" name="inscripcion">
                 </form>
                 <div class="up">
-                    <img src="<?php echo $listadoOfertas[0]['logoAG']; ?>" alt="Logo Oferta">
+                <?php if (is_null($listadoOfertas[0]['logoAG'])) { ?>
+                                <img src="../Img/Logos/LogoColor.png" alt="Logo Oferta">
+                            <?php } else { ?>
+                                <img src="<?php echo $oferta['logoAG']; ?>" alt="Logo Oferta">
+                            <?php } ?>
                     <div class="info">
                         <div class="ubicacion"><?php echo $listadoOfertas[0]['poblacion'] . ' | ' . mb_convert_case(mb_strtolower($listadoOfertas[0]['provincia'], 'UTF-8'), MB_CASE_TITLE, "UTF-8") . ' | ' . mb_convert_case(mb_strtolower($listadoOfertas[0]['pais'], 'UTF-8'), MB_CASE_TITLE, "UTF-8"); ?></div>
                         <div class="fecha">
