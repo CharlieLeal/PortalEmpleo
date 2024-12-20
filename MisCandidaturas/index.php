@@ -63,7 +63,7 @@ if (isset($_COOKIE['mailUsuario'])) { ?>
                         <?php if (is_null($ofertas['logoAG'])) { ?>
                                 <img src="../Img/Logos/LogoColor.png" alt="Logo Oferta">
                             <?php } else { ?>
-                                <img src="<?php echo $oferta['logoAG']; ?>" alt="Logo Oferta">
+                                <img src="<?php echo $ofertas['logoAG'];?>" alt="Logo Oferta">
                             <?php } ?>
                         </div>
                         <div class="ofertaResumenEstado">

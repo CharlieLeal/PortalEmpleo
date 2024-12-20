@@ -39,7 +39,7 @@ if (isset($_COOKIE['mailUsuario']) && isset($_GET['nameOf'])) { ?>
                 <?php if (is_null($listadoOfertas[0]['logoAG'])) { ?>
                                 <img src="../Img/Logos/LogoColor.png" alt="Logo Oferta">
                             <?php } else { ?>
-                                <img src="<?php echo $oferta['logoAG']; ?>" alt="Logo Oferta">
+                                <img src="<?php echo $listadoOfertas[0]['logoAG']; ?>" alt="Logo Oferta">
                             <?php } ?>
                     <div class="info">
                         <div class="ubicacion"><?php echo $listadoOfertas[0]['poblacion'] . ' | ' . mb_convert_case(mb_strtolower($listadoOfertas[0]['provincia'], 'UTF-8'), MB_CASE_TITLE, "UTF-8") . ' | ' . mb_convert_case(mb_strtolower($listadoOfertas[0]['pais'], 'UTF-8'), MB_CASE_TITLE, "UTF-8"); ?></div>
