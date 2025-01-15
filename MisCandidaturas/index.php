@@ -41,7 +41,7 @@ if (isset($_COOKIE['mailUsuario'])) { ?>
                     <label for="estadoPendiente">A la espera</label>
                 </div>
                 <div>
-                    <input type="radio" id="estadoProceso" name="estadoCandidatura" value="En proceso" onclick="filtrarOfertasPorEstado()">
+                    <input type="radio" id="estadoProceso" name="estadoCandidatura" value="En Proceso" onclick="filtrarOfertasPorEstado()">
                     <label for="estadoTodos">En proceso</label>
                 </div>
                 <div>

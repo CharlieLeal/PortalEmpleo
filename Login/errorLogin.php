@@ -14,36 +14,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else if (isset($login['token'])) {
             $infoUsuario = login($_POST['user'], md5($_POST['passwd']), ' ');
 
-            if(isset($_COOKIE['mailUsuario'])){
-                setcookie("mailUsuario", "", time() - 3600, "/",".agioglobal.com",true);
+            if (isset($_COOKIE['mailUsuario'])) {
+                setcookie("mailUsuario", "", time() - 3600, "/", ".agioglobal.com", true);
             }
-            setcookie("mailUsuario", $infoUsuario['email'], time() + (86400 * 30), "/",".agioglobal.com",true);
+            setcookie("mailUsuario", $infoUsuario['email'], time() + (86400 * 30), "/", ".agioglobal.com", true);
             if ($infoUsuario['role'] == '3') {
 
-                if(isset($_COOKIE['mailUsuario'])){
-                    setcookie("empleado", "", time() - 3600, "/",".agioglobal.com",true);
+                if (isset($_COOKIE['mailUsuario'])) {
+                    setcookie("empleado", "", time() - 3600, "/", ".agioglobal.com", true);
                 }
 
-                if(isset($_COOKIE['nameUser'])){
-                    setcookie("nameUser", "", time() - 3600, "/",".agioglobal.com",true);
-                }  
+                if (isset($_COOKIE['nameUser'])) {
+                    setcookie("nameUser", "", time() - 3600, "/", ".agioglobal.com", true);
+                }
 
-                setcookie("empleado", $infoUsuario['email'], time() + (86400 * 30), "/",".agioglobal.com",true);
-                setcookie("nameUser", $infoUsuario['nombre'] . ' ' . $infoUsuario['apellido1'] . ' ' . $infoUsuario['apellido2'], time() + (86400 * 30), "/",".agioglobal.com",true);
+                setcookie("empleado", $infoUsuario['email'], time() + (86400 * 30), "/", ".agioglobal.com", true);
+                setcookie("nameUser", $infoUsuario['nombre'] . ' ' . $infoUsuario['apellido1'] . ' ' . $infoUsuario['apellido2'], time() + (86400 * 30), "/", ".agioglobal.com", true);
             }
             if ($infoUsuario['resetPassword'] == true) {
                 header('Location: ./cambioPass.php');
             } else {
-                if(isset($_COOKIE['pwd'])){
-                    setcookie("pwd", "", time() - 3600, "/",".agioglobal.com",true);
-                }    
-                setcookie("pwd", md5($_POST['passwd']), time() + (86400 * 30), "/",".agioglobal.com",true);
-                header('Location: ../Home/index.php');
+                if (isset($_COOKIE['pwd'])) {
+                    setcookie("pwd", "", time() - 3600, "/", ".agioglobal.com", true);
+                }
+                setcookie("pwd", md5($_POST['passwd']), time() + (86400 * 30), "/", ".agioglobal.com", true);
+                if (isset($_POST['nameOf'])) {
+                    header('Location: ../Ofertas/index.php?nameOf=' . $_POST['nameOf']);
+                } else {                    
+                    header('Location: ../Home/index.php');
+                }
             }
         }
     } //de if 
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 
@@ -59,6 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="shortcut icon" href="../Img/AgioGlobal i Azul Oscuro.png">
     <title>AgioGlobal</title>
 </head>
+
 <body style="width: 100%;">
 
     <div class="header">
@@ -72,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <img src="../Img/logoColor.png" alt="Logo Agio" class="logo">
                     </div>
                     <div class="welcome">
-                        Usuario y/o contraseña incorrectos:
+                    Usuario y/o contraseña incorrectos:
                     </div>
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form">
                         <div class="registro">
@@ -83,6 +89,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         </div>
                         <div class="buttons">
+                            <?php if (isset($_GET['nameOf'])) { ?>
+                                <input class="ocultar" type="text" name="nameOf" value="<?php echo $_GET['nameOf']; ?>">
+                            <?php } ?>
+
                             <input class="loginButton" type="submit" name="submit" value="Login" />
                             <a href="./resetPassword.php">¿Ha olvidado su contraseña?</a>
                         </div>

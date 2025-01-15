@@ -30,31 +30,38 @@ if (isset($_COOKIE['mailUsuario']) && isset($_GET['nameOf'])) { ?>
                 <h2 class="headline"><?php echo $listadoOfertas[0]['titulo'] ?></h2>
             </div>
             <div class="descripcionOferta">
-            <form action="./inscripcionOferta.php" enctype="multipart/form-data" method="post" class="form ajustes">
-            <input type="text" class="ocultar" name="idUsuario" value="<?php echo $infoUsuario['idUsuarioPortalEmpleo']; ?>">
+                <form action="./inscripcionOferta.php" enctype="multipart/form-data" method="post" class="form ajustes">
+                    <input type="text" class="ocultar" name="idUsuario" value="<?php echo $infoUsuario['idUsuarioPortalEmpleo']; ?>">
                     <input type="text" class="ocultar" name="idOferta" value="<?php echo $_GET['nameOf']; ?>">
                     <input type="submit" value="Inscribirme" name="inscripcion">
                 </form>
                 <div class="up">
-                <?php if (is_null($listadoOfertas[0]['logoAG'])) { ?>
-                                <img src="../Img/Logos/LogoColor.png" alt="Logo Oferta">
-                            <?php } else { ?>
-                                <img src="<?php echo $listadoOfertas[0]['logoAG']; ?>" alt="Logo Oferta">
-                            <?php } ?>
+                    <?php if (is_null($listadoOfertas[0]['logoAG'])) { ?>
+                        <img src="../Img/Logos/LogoColor.png" alt="Logo Oferta">
+                    <?php } else { ?>
+                        <img src="<?php echo $listadoOfertas[0]['logoAG']; ?>" alt="Logo Oferta">
+                    <?php } ?>
                     <div class="info">
                         <div class="ubicacion"><?php echo $listadoOfertas[0]['poblacion'] . ' | ' . mb_convert_case(mb_strtolower($listadoOfertas[0]['provincia'], 'UTF-8'), MB_CASE_TITLE, "UTF-8") . ' | ' . mb_convert_case(mb_strtolower($listadoOfertas[0]['pais'], 'UTF-8'), MB_CASE_TITLE, "UTF-8"); ?></div>
                         <div class="fecha">
                             <?php
                             $fechaPublicacion = new DateTime($listadoOfertas[0]['fechaPublicacion']);
                             $fechaSistema = new DateTime();
-                            $diferencia = $fechaSistema->diff($fechaPublicacion);
-                            if ($diferencia->days < 1) {
-                                // Si es menos de un día, mostramos las horas
-                                $horas = $diferencia->h + ($diferencia->days * 24); // Incluye las horas completas
-                                echo "hace " . $horas . "h";
+
+                            // Comparar solo las fechas (sin horas)
+                            if ($fechaPublicacion->format('Y-m-d') === $fechaSistema->format('Y-m-d')) {
+                                echo "<p class = hoy>Hoy</p>";
                             } else {
-                                // Si es un día o más, mostramos los días
-                                echo "hace " . $diferencia->days . " días";
+                                $diferencia = $fechaSistema->diff($fechaPublicacion);
+
+                                if ($diferencia->days < 1) {
+                                    // Si es menos de un día, mostramos las horas
+                                    $horas = $diferencia->h + ($diferencia->days * 24); // Incluye las horas completas
+                                    echo "hace " . $horas . "h";
+                                } else {
+                                    // Si es un día o más, mostramos los días
+                                    echo "hace " . $diferencia->days . " días";
+                                }
                             }
                             ?>
                         </div>
@@ -142,5 +149,9 @@ if (isset($_COOKIE['mailUsuario']) && isset($_GET['nameOf'])) { ?>
 
 <?php
 } else {
-    header('Location: ../Login/login.php');
+    if (isset($_GET['nameOf'])) {
+        header('Location: ../Login/login.php?nameOf=' . $_GET['nameOf']);
+    } else {
+        header('Location: ../Login/login.php');
+    }
 }
